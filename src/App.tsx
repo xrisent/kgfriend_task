@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import UsersPage from './pages/UsersPage/UsersPage';
 import Layout from './components/Layout/Layout';
 import './globals.scss'
+import UserDetailsPage from './pages/UserDetailsPage/UserDetailsPage';
 
 const App: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const App: React.FC = () => {
       <Layout>
         <Routes>
           <Route path="/users" element={<UsersPage />} />
+          <Route path="/users/:id" element={<UserDetailsPage />} />
         </Routes>
       </Layout>
     </Router>

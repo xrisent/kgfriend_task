@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Search from '../../shared/Search/Search';
 import UserCard from '../../components/UserCard/UserCard';
-import useUsers from '../../services/useUsers';
+import useUsers from '../../hooks/useUsers';
 import './UsersPage.scss'
 
 const UsersPage: React.FC = () => {
