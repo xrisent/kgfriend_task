@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { User } from '../../entities/User';
+import './UserCard.scss'
 
 const UserCard: React.FC<{ user: User }> = ({ user }) => {
     return (
-      <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px' }}>
+      <div className='userCard'>
         <h3>{user.name}</h3>
         <p>{user.email}</p>
         <p>{user.address.city}</p>

@@ -17,7 +17,7 @@ const UsersPage: React.FC = () => {
           <h1>Список пользователей</h1>
           <Search search={search} onSearchChange={(e) => setSearch(e.target.value)} />
           {loading ? <p>Загрузка...</p> : error ? <p>{error}</p> : (
-            <div>
+            <div className='usersPage__box-users'>
               {filteredUsers.map(user => (
                 <UserCard key={user.id} user={user} />
               ))}
