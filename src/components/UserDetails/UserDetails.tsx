@@ -1,5 +1,6 @@
 import React from 'react';
 import { User } from '../../entities/User';
+import './UserDetails.scss'
 
 const UserDetails: React.FC<{user: User}> = ({ user }) => {
   return (
