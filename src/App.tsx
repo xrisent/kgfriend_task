@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import UsersPage from './pages/UsersPage/UsersPage';
 import Layout from './components/Layout/Layout';
 import './globals.scss'
@@ -10,6 +10,7 @@ const App: React.FC = () => {
     <Router>
       <Layout>
         <Routes>
+          <Route path="/" element={<Navigate to="/users" replace />} />
           <Route path="/users" element={<UsersPage />} />
           <Route path="/users/:id" element={<UserDetailsPage />} />
         </Routes>
