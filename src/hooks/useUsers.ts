@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import axiosInstance from '../utils/axiosInstance';
 import { User } from '../entities/User';
+import { getUsers } from '../services/getUsers';
 
 const useUsers = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -8,10 +8,10 @@ const useUsers = () => {
   const [error, setError] = useState<string>('');
 
   useEffect(() => {
-    const fetchUsers = async () => {
+    const loadUsers = async () => {
       try {
-        const response = await axiosInstance.get('/users');
-        setUsers(response.data);
+        const data = await getUsers();
+        setUsers(data);
       } catch (err) {
         setError('Ошибка при загрузке данных');
         console.error(err);
@@ -20,7 +20,7 @@ const useUsers = () => {
       }
     };
 
-    fetchUsers();
+    loadUsers();
   }, []);
 
   return { users, loading, error };
